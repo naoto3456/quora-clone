@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  has_many :questions
+  has_many :answers
+
+  validates :first_name, presence:true
+  validates :email , presence:true
+
+
  	include BCrypt
 
   	def password

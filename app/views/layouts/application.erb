@@ -6,8 +6,14 @@
 	</head>
 	<body>
 		<% if logged_in? %>
-			<p>Welcome <%= current_user.email %></p>
-			<a href="/logout">log out</a>
+			<p>Welcome <%= current_user.first_name %>
+			<div style="border:1px">
+				<p>Menu:
+					<a href="/questions">home page</a>
+					<a href="/users/<%= current_user.id %>/questions">profile</a>
+					<a href="/logout">log out</a>
+				</p>
+			</div>
 		<% end %>
 		<%= yield %>
 	</body>
