@@ -21,8 +21,8 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'uri'
 require 'bcrypt'
-# require 'will_paginate'
-# require 'will_paginate/active_record'
+require 'will_paginate'
+require 'will_paginate/active_record'
 
 ######################################################################
 

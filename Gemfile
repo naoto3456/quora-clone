@@ -26,7 +26,7 @@ gem 'rspec'
 
 # Adding utilities
 gem 'bcrypt'
-#gem 'will_paginate'
+gem 'will_paginate'
 
 group :development, :test do
 	# Adding shotgun for local web hosting
