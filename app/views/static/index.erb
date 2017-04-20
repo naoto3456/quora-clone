@@ -10,10 +10,16 @@
 		<% @questions.each {|question| %>
 	 		<tr>
 	 			<td><a href="/questions/<%= question.id %>"><%= question.title %></a></td>
-	 			<td><button type="submit" value="up" onclick='location.href="/questions/<%= question.id %>/votes"'>Upvote | <%= question.question_votes.count %></button></td>
-	 			<td><button type="submit" value="down" onclick='location.href="/questions/<%= question.id %>/votes"'>Downvote</button></td>
-
-	 		</tr>
+	 			<td>
+					<% if question.question_votes.where(user_id:current_user.id,upvote:true).count == 0  %>
+					<% 	vote_status = "unvoted" %>
+					<% else  %>
+					<%  vote_status = "voted" %>
+					<% end  %>
+						<button type="submit" class="button_upvote <%= vote_status %>" id="button_upvote<%= question.id %>" value="<%= question.id %>"">Upvote | <%= question.question_votes.count %>
+						</button>
+		 			</td>
+	 			</tr>
 		<% } %>
 		</table>
 	<% end %>

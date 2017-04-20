@@ -3,7 +3,7 @@ class CreateQuestionVotes < ActiveRecord::Migration
 		create_table :question_votes do |t|
 			t.integer :question_id
 			t.integer :user_id
-			t.boolean :upvote
+			t.integer :upvote
 			t.timestamps
 		end
 
